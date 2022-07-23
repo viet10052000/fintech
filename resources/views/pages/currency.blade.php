@@ -7,6 +7,12 @@
                     <div class="pt-2 text-center" style="background: #2d9241;color: white">
                         <h2 class="fw-bold me-3">Tiền Tệ Hôm Nay</h2>
                     </div>
+                    <div class="mx-2 text-end mt-2">
+                        <a href="https://www.msn.com/vi-vn/money/currencyconverter?fromMaestro=true&duration=1D&id=avyufr" title=""
+                           style="color: black;font-size: 20px;font-weight: bold">
+                            Tra cứu chuyển đổi tiền tệ ở đây >>
+                        </a>
+                    </div>
 
                     <div class="card-body">
                         <div class="table-responsive">
