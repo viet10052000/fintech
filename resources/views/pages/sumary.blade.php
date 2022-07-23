@@ -4,14 +4,14 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h2>Tổng Quan Thị Trường</h2>
-                    </div>
                     <div class="pt-2 text-center" style="background: #2d9241;color: white">
                         <h2 class="fw-bold me-3">Tổng Quan Thị Trường</h2>
                     </div>
                     <div class="mx-2 text-end mt-2">
-                        <a href="https://www.cophieu68.vn/stockonline.php?o=stockname" title="">Xem Đầy Đủ Ở Đây>></a>
+                        <a href="https://www.cophieu68.vn/stockonline.php?o=stockname" title=""
+                           style="color: black;font-size: 20px;font-weight: bold">
+                            Xem Đầy Đủ Ở Đây>>
+                        </a>
                     </div>
 
                     <div class="card-body">
