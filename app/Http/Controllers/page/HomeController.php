@@ -60,7 +60,7 @@ class HomeController extends Controller
     public function comment(Request $request) {
         $comment = new Comment();
         $comment->user_id = Auth::user()->id;
-        $comment->book_id = $request->post_id;
+        $comment->post_id = $request->post_id;
         $comment->content = $request->comment;
         if ($comment->content == null)
         {

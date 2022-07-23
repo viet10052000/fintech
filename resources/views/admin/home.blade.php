@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Tin Tức Trong Ngày</div>
+                    <div class="card-header fw-bold">Tin Tức Trong Ngày</div>
 
                     <div class="card-body">
                         @foreach($pages as $page)
@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">Tin Tức có nhiều lượt xem gần đây</div>
+                    <div class="card-header fw-bold">Tin Tức có nhiều lượt xem gần đây</div>
 
                     <div class="card-body">
                         <table class="table">
@@ -45,15 +45,17 @@
                     </div>
                 </div>
                 <div class="card mt-2">
-                    <div class="card-header">Chuyên Gia Nhiều Lượt Sao</div>
+                    <div class="card-header fw-bold">
+                        Chuyên Gia Nhiều Lượt Sao
+                    </div>
 
                     <div class="card-body">
                         <table class="table">
                             <tbody>
                             @foreach($stars as $star)
                                 <tr>
-                                    <td class="col-8 fw-bold"><a class="text-decoration-none" style="color:black;" href="">{{$point->user->name}}</a></td>
-                                    <td class="col-4">Số Sao : {{$point->star}}</td>
+                                    <td class="col-8 fw-bold"><a class="text-decoration-none" style="color:black;" href="">{{$star->user->name}}</a></td>
+                                    <td class="col-4">lượt sao : {{$star->star}}</td>
                                 </tr>
                             @endforeach
                             </tbody>

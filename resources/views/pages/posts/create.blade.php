@@ -5,8 +5,8 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h2>Thêm Bài Đăng</h2>
+                    <div class="pt-2 text-center" style="background: #2d9241;color: white">
+                        <h2 class="fw-bold me-3">Thêm Bài Phân Tích</h2>
                     </div>
                     <div class="card-body">
                         @if (session('status'))
@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="exampleInputEmail1">Nội dung</label>
-                                <textarea type="text" name="description" rows="10" onresize="none" class="form-control" aria-describedby="emailHelp"></textarea>
+                                <textarea class="form-control" rows="10" onresize="none" id="description" name="description"></textarea>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="exampleInputEmail1">Nguồn link url (nếu có)</label>
@@ -42,12 +42,22 @@
                                 <input type="file" name="image" class="form-control-file">
                             </div>
 
-                            <a href="{{route('posts.index')}}" class="btn btn-secondary">Quay lại</a>
-                            <button type="submit" class="btn btn-primary">Thêm</button>
+                            <a href="{{route('posts.index')}}" class="btn btn-secondary btn-sm">Quay lại</a>
+                            <button type="submit" class="btn btn-success btn-sm">Thêm</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        ClassicEditor.create( document.querySelector( '#description' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 @endsection
