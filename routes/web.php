@@ -26,7 +26,7 @@ Route::get('/page/{id}', [\App\Http\Controllers\page\HomeController::class,'page
 Route::get('/expert', [\App\Http\Controllers\page\HomeController::class,'expert'])->name('expert');
 Route::get('/expert/{id}', [\App\Http\Controllers\page\HomeController::class,'expertDetail'])->name('expert.detail');
 Route::post('/expert', [\App\Http\Controllers\page\HomeController::class,'comment'])->name('comment');
-Route::resource('/posts', App\Http\Controllers\PostController::class);
+Route::resource('/posts', App\Http\Controllers\PostController::class)->middleware('expert');
 
 Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::get('/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('home');

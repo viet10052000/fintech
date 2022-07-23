@@ -11,7 +11,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-responsive">
+                            <table class="table table-hover">
                                 <thead>
                                 <tr>
                                     <th>Tên người dùng</th>
@@ -28,12 +28,14 @@
                                         <td>{{$comment->post->title}}</td>
                                         <td>{{$comment->content}}</td>
                                         <td>{{$comment->updated_at}}</td>
-                                        <td class="d-flex flex-row p-1">
+                                        <td>
                                             <div class="p-1">
-                                                <form method="post" action="{{route('comment.destroy',$comment->id)}}">
+                                                <form method="post" action="">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button onclick="return confirm('bạn muốn xóa comment này?');" class="btn btn-danger">xóa</button>
+                                                    <a onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
+                                                        <i class="fa-solid fa-trash-can" style="color: red;cursor: pointer"></i>
+                                                    </a>
                                                 </form>
                                             </div>
                                         </td>

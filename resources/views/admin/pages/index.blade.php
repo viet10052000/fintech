@@ -16,15 +16,14 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-hover">
                                 <thead>
                                 <tr>
                                     <th>Tên</th>
                                     <th>Ảnh</th>
-                                    <th>Nội dung</th>
-                                    <th>Lượt xem</th>
+                                    <th class="col-1">Lượt xem</th>
                                     <th>Thời gian tạo</th>
-                                    <th></th>
+                                    <th class="col-1"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -39,25 +38,24 @@
 
                                             @endif
                                         </td>
-                                        <td>
-                                            <p style="width: 500px;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;">
-                                                {{$page->description}}
-                                            </p>
-                                        </td>
                                         <td>{{$page->view}}</td>
                                         <td>{{$page->updated_at}}</td>
-                                        <td class="d-flex flex-row p-1">
-                                            <div class="p-1">
-                                                <a href="{{route('admin.pages.edit',$page->id)}}" class="btn btn-primary" >
-                                                    sửa
-                                                </a>
-                                            </div>
-                                            <div class="p-1">
-                                                <form method="post" action="{{route('admin.pages.destroy',$page->id)}}">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                    <button onclick="return confirm('bạn muốn xóa tin tức này?');" class="btn btn-danger">xóa</button>
-                                                </form>
+                                        <td>
+                                            <div class="d-flex flex-row">
+                                                <div class="p-1 mx-1 me-3">
+                                                    <a href="{{route('admin.pages.edit',$page->id)}}" >
+                                                        <i class="fa-solid fa-pen"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="p-1">
+                                                    <form method="post" action="{{route('admin.pages.destroy',$page->id)}}">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <a onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
+                                                            <i class="fa-solid fa-trash-can" style="color: red;cursor: pointer"></i>
+                                                        </a>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>

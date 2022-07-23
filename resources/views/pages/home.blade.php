@@ -4,13 +4,15 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Tin Tức Trong Ngày</div>
+                    <div class="pt-2" style="background: #2d9241;color: white">
+                        <h4 class="fw-bold me-3 mx-2">Tin Tức</h4>
+                    </div>
 
                     <div class="card-body">
                         @foreach($pages as $page)
                             <a class="row mt-1 text-decoration-none" style="color:black;" href="{{route('page.detail',$page->id)}}">
                                 <div class="col-2">
-                                    <img height="75" width="75" src="{{$page->image}}" alt="{{$page->name}}">
+                                    <img style="width: 100%" src="{{$page->image}}" alt="{{$page->name}}">
                                 </div>
                                 <div class="col-10">
                                     <div class="fw-bold fs-7">{{ $page->title }}</div>
@@ -29,8 +31,9 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">Tin Tức có nhiều lượt xem gần đây</div>
-
+                    <div class="pt-2" style="background: #2d9241;color: white">
+                        <h6 class="fw-bold me-3 mx-2">Tin Tức có nhiều lượt xem gần đây</h6>
+                    </div>
                     <div class="card-body">
                         <table class="table">
                             <tbody>
@@ -45,15 +48,16 @@
                     </div>
                 </div>
                 <div class="card mt-2">
-                    <div class="card-header">Chuyên Gia Nhiều Lượt Sao</div>
-
+                    <div class="pt-2" style="background: #2d9241;color: white">
+                        <h6 class="fw-bold me-3 mx-2">Chuyên Gia Nhiều Lượt Sao</h6>
+                    </div>
                     <div class="card-body">
                         <table class="table">
                             <tbody>
                             @foreach($stars as $star)
                                 <tr>
-                                    <td class="col-8 fw-bold"><a class="text-decoration-none" style="color:black;" href="">{{$point->user->name}}</a></td>
-                                    <td class="col-4">Số Sao : {{$point->star}}</td>
+                                    <td class="col-8 fw-bold"><a class="text-decoration-none" style="color:black;" href="">{{$star->user->name}}</a></td>
+                                    <td class="col-4">Số Sao : {{$star->star}}</td>
                                 </tr>
                             @endforeach
                             </tbody>

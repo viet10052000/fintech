@@ -21,18 +21,27 @@
                     <nav aria-label="breadcrumb" class="mx-3 mt-3">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Bài Đăng Chuyên Gia</li>
+                            <li class="breadcrumb-item active" aria-current="page">Chuyên Gia Phân Tích</li>
                         </ol>
                     </nav>
                     <div class="card-header">
-                        <span class="fw-bold fs-5">{{ $post->title }}</span>
-                        <button class="fw-bold float-end btn btn-secondary btn-sm mx-1">Tặng 1 Sao</button>
-                        <span class="float-end fs-5">Số Sao : {{ $star }} </span>
+                        <span class="fw-bold fs-4">
+                            {{ $post->title }}
+                        </span>
+                        <a class="fw-bold float-end fs-4" style="color: rgba(218,248,22,0.8);cursor: pointer;">
+                            <i class="fa-solid fa-star"></i>
+                        </a>
+                        <span class="float-end fs-7 mt-2 mx-2">Số Sao : {{ $star }} </span>
+                        <div>
+                            <div class="fb-like mt-2 text-end" data-href="{{\URL::current()}}" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                        </div>
                     </div>
 
-                    <div class="card-header fs-5">
-                        <span>Chuyên Gia : {{ $post->user->name }}</span>
-                        <button class="fw-bold float-end btn btn-outline-success btn-sm mx-1">Xem profile</button>
+                    <div class="fs-5 mx-3 mt-2">
+                        <span>Chuyên gia phân tích : </span>{{ $post->user->name }}</span>
+                        <a class="fw-bold float-start mx-1" style="cursor: pointer;">
+                            <i class="fa-solid fa-address-card"></i>
+                        </a>
 
                     </div>
 
@@ -51,44 +60,45 @@
                         </div>
                         <div class="content mt-3">
                             <p class="fs-5">
-                                {{ $post->description }}
+                                {!! html_entity_decode($post->description) !!}
                             </p>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        Hỏi & Trả Lời
-                    </div>
-                    <div class="card-body">
-                        @foreach($comments as $comment)
-                            <div class="fw-bold">
-                                {{ $comment->user->name }}
+                    <div class="col-md-12">
+                        <div class="">
+                            <div class="mx-3 fw-bold">
+                                Hỏi & Trả Lời
                             </div>
-                            <div>
-                                {{ $comment->content }}
-                            </div>
-                        @endforeach
-                        @if(Auth::user())
-                            <div>
-                                <form class="row g-3" action="{{ route('comment') }}" method="post">
-                                    @csrf
-                                    <div class="col-auto">
-                                        <label for="inputPassword2" class="visually-hidden">bình luận</label>
-                                        <input type="text" name="comment" class="form-control" id="inputPassword2" placeholder="bình luận">
+                            <div class="card-body">
+                                @foreach($comments as $comment)
+                                    <div class="fw-bold">
+                                        {{ $comment->user->name }}
                                     </div>
-                                    <input type="hidden" name="book_id" value="{{$post->id}}" class="form-control" id="inputPassword2" placeholder="bình luận">
-                                    <div class="col-auto">
-                                        <button type="submit" class="btn btn-primary mb-3">gửi</button>
+                                    <div>
+                                        {{ $comment->content }}
                                     </div>
-                                </form>
+                                @endforeach
+                                @if(Auth::user())
+                                    <div>
+                                        <form class="row g-3" action="{{ route('comment') }}" method="post">
+                                            @csrf
+                                            <div class="col-auto">
+                                                <label for="inputPassword2" class="visually-hidden">bình luận</label>
+                                                <input type="text" name="comment" class="form-control" id="inputPassword2" placeholder="bình luận">
+                                            </div>
+                                            <input type="hidden" name="post_id" value="{{$post->id}}" class="form-control" id="inputPassword2" placeholder="bình luận">
+                                            <div class="col-auto">
+                                                <button type="submit" class="btn btn-primary mb-3">gửi</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                @endif
                             </div>
-                        @endif
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=1420173931770017&autoLogAppEvents=1" nonce="zQOnkoTE"></script>
 @stop

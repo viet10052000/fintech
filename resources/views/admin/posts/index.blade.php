@@ -18,12 +18,11 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-hover">
                                 <thead>
                                 <tr>
                                     <th>Tên</th>
                                     <th>Ảnh</th>
-                                    <th>Nội dung</th>
                                     <th>Lượt xem</th>
                                     <th>Người Tạo</th>
                                     <th>Thời gian tạo</th>
@@ -41,20 +40,17 @@
                                                 <img class="img-thumbnail" width="100" src="https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2020/03/17/trend-avatar-1.jpg" />
                                             @endif
                                         </td>
-                                        <td>
-                                            <p style="width: 500px;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;">
-                                                {{$post->description}}
-                                            </p>
-                                        </td>
                                         <td>{{$post->view}}</td>
                                         <td>{{$post->user->name}}</td>
                                         <td>{{$post->updated_at}}</td>
-                                        <td class="d-flex flex-row p-1">
+                                        <td>
                                             <div class="p-1">
                                                 <form method="post" action="{{route('posts.destroy',$post->id)}}">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button onclick="return confirm('bạn muốn xóa bài đăng này?');" class="btn btn-danger">xóa</button>
+                                                    <a onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
+                                                        <i class="fa-solid fa-trash-can" style="color: red;cursor: pointer"></i>
+                                                    </a>
                                                 </form>
                                             </div>
                                         </td>

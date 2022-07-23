@@ -16,7 +16,7 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-hover table-lg">
                                 <thead>
                                 <tr>
                                     <th>Tên</th>
@@ -45,7 +45,9 @@
                                                 <form method="post" action="{{route('admin.users.destroy',$user->id)}}">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button onclick="return confirm('bạn muốn xóa user này?');" class="btn btn-danger">xóa</button>
+                                                    <a onclick="return confirm('bạn muốn xóa ?');" class="cursor-pointer">
+                                                        <i class="fa-solid fa-trash-can" style="color: red;cursor: pointer"></i>
+                                                    </a>
                                                 </form>
                                             </div>
                                             @endif
