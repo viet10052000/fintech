@@ -37,6 +37,11 @@ class HomeController extends Controller
     public function binance() {
         return view('pages.binance');
     }
+
+    public function finance() {
+        return view('pages.finance');
+    }
+
     public function page() {
         $pages = Page::orderBy('id', 'DESC')->paginate(8);
         return view('pages.page',compact(['pages']));
@@ -148,7 +153,7 @@ class HomeController extends Controller
     public function comment(Request $request) {
         $comment = new Comment();
         $comment->user_id = Auth::user()->id;
-        $comment->book_id = $request->post_id;
+        $comment->post_id = $request->post_id;
         $comment->content = $request->comment;
         if ($comment->content == null)
         {

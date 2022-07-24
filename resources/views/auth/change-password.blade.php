@@ -20,8 +20,8 @@
                 @endif
 
                 <div class="card">
-                    <div class="card-header text-center">
-                        <h2>Đổi Mật Khẩu</h2>
+                    <div class="pt-2 text-center" style="background: #2d9241;color: white">
+                        <h2 class="fw-bold me-3">Đổi Mật Khẩu</h2>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('admin.changePass') }}">

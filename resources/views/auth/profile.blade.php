@@ -5,9 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header text-center">
-                        <h2>Trang cá Nhân</h2>
+                    <div class="pt-2 text-center" style="background: #2d9241;color: white">
+                        <h2 class="fw-bold me-3">{{ __('Trang Cá Nhân') }}</h2>
                     </div>
+
                     <div class="card-body">
                         <div>
                             <div class="row mb-5">
