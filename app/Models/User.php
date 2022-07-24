@@ -54,4 +54,13 @@ class User extends Authenticatable
     public function posts() {
         return $this->hasMany(Post::class, 'user_id');
     }
+
+    public function views(){
+        $posts = Post::where('user_id','=',$this->id)->get();
+        $views = 0;
+        foreach($posts as $post){
+            $views = $views + $post->view;
+        }
+        return $posts;
+    }
 }

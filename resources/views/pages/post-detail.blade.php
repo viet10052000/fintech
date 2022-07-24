@@ -32,7 +32,7 @@
 
                     <div class="card-header fs-5">
                         <span>Chuyên Gia : {{ $post->user->name }}</span>
-                        <button class="fw-bold float-end btn btn-outline-success btn-sm mx-1">Xem profile</button>
+                        <a class="fw-bold float-end btn btn-outline-success btn-sm mx-1" href="{{route('expert.profile',$post->user_id)}}">Xem profile</a>
 
                     </div>
 

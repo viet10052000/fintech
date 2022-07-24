@@ -25,6 +25,10 @@ Route::get('/page', [\App\Http\Controllers\page\HomeController::class,'page'])->
 Route::get('/page/{id}', [\App\Http\Controllers\page\HomeController::class,'pageDetail'])->name('page.detail');
 Route::get('/expert', [\App\Http\Controllers\page\HomeController::class,'expert'])->name('expert');
 Route::get('/expert/{id}', [\App\Http\Controllers\page\HomeController::class,'expertDetail'])->name('expert.detail');
+Route::get('/expert-profile/{id}', [\App\Http\Controllers\page\HomeController::class,'expertProfile'])->name('expert.profile');
+Route::post('/expert-subcribe', [\App\Http\Controllers\page\HomeController::class,'expertSubcribe'])->name('expert.subcribe');
+Route::post('/expert-unsubcribe', [\App\Http\Controllers\page\HomeController::class,'expertUnSubcribe'])->name('expert.unsubcribe');
+Route::get('/expert-list', [\App\Http\Controllers\page\HomeController::class,'expertList'])->name('expert.list');
 Route::post('/expert', [\App\Http\Controllers\page\HomeController::class,'comment'])->name('comment');
 Route::resource('/posts', App\Http\Controllers\PostController::class);
 

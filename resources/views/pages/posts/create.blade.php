@@ -41,7 +41,18 @@
                                 <label for="exampleInputEmail1">Ảnh</label>
                                 <input type="file" name="image" class="form-control-file">
                             </div>
-
+                            <div class="form-group">
+                                <label>Public</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" value="1" type="radio" name="public" id="public"
+                                        checked="">
+                                    <label class="form-check-label" for="active">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" value="0" type="radio" name="public" id="no_public">
+                                    <label class="form-check-label" for="no_active">No</label>
+                                </div>
+                            </div>
                             <a href="{{route('posts.index')}}" class="btn btn-secondary">Quay lại</a>
                             <button type="submit" class="btn btn-primary">Thêm</button>
                         </form>
