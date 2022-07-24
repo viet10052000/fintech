@@ -66,7 +66,7 @@
                             <a class="nav-link" href="{{route('expert')}}">Chuyên Gia Phân Tích</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('expert')}}">Tra Cứu</a>
+                            <a class="nav-link" href="{{route('finance')}}">Tra Cứu</a>
                         </li>
                     </ul>
 

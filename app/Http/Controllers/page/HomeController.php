@@ -31,6 +31,11 @@ class HomeController extends Controller
     public function binance() {
         return view('pages.binance');
     }
+
+    public function finance() {
+        return view('pages.finance');
+    }
+
     public function page() {
         $pages = Page::orderBy('id', 'DESC')->paginate(8);
         return view('pages.page',compact(['pages']));

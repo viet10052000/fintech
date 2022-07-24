@@ -21,6 +21,7 @@ Route::post('/change-password',[\App\Http\Controllers\Auth\AuthController::class
 Route::get('/summary', [\App\Http\Controllers\page\HomeController::class,'summary'])->name('summary');
 Route::get('/currency', [\App\Http\Controllers\page\HomeController::class,'currency'])->name('currency');
 Route::get('/binance', [\App\Http\Controllers\page\HomeController::class,'binance'])->name('binance');
+Route::get('/finance', [\App\Http\Controllers\page\HomeController::class,'finance'])->name('finance');
 Route::get('/page', [\App\Http\Controllers\page\HomeController::class,'page'])->name('page');
 Route::get('/page/{id}', [\App\Http\Controllers\page\HomeController::class,'pageDetail'])->name('page.detail');
 Route::get('/expert', [\App\Http\Controllers\page\HomeController::class,'expert'])->name('expert');
