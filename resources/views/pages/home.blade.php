@@ -5,11 +5,68 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="pt-2" style="background: #2d9241;color: white">
-                        <h4 class="fw-bold me-3 mx-2">Thị Trường</h4>
+                        <h4 class="fw-bold me-3 mx-2">Thông chứng khoán thế giới</h4>
                     </div>
-
-                    <div class="card-body">
-                        <canvas id="myChart" width="400" height="100"></canvas>
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div id="tradingview_450ff"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                            new TradingView.MediumWidget(
+                                {
+                                    "symbols": [
+                                        [
+                                            "Apple",
+                                            "AAPL|1D"
+                                        ],
+                                        [
+                                            "Google",
+                                            "GOOGL|1D"
+                                        ],
+                                        [
+                                            "Microsoft",
+                                            "MSFT|1D"
+                                        ],
+                                        [
+                                            "Meta",
+                                            "NASDAQ:META|1D"
+                                        ],
+                                        [
+                                            "Tesla",
+                                            "NASDAQ:TSLA|1D"
+                                        ],
+                                        [
+                                            "Amazon",
+                                            "NASDAQ:AMZN|1D"
+                                        ]
+                                    ],
+                                    "chartOnly": false,
+                                    "width": "100%",
+                                    "height": "600px",
+                                    "locale": "vi_VN",
+                                    "colorTheme": "dark",
+                                    "isTransparent": false,
+                                    "autosize": true,
+                                    "showVolume": false,
+                                    "hideDateRanges": false,
+                                    "scalePosition": "right",
+                                    "scaleMode": "Normal",
+                                    "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                                    "noTimeScale": false,
+                                    "valuesTracking": "1",
+                                    "chartType": "line",
+                                    "fontColor": "#787b86",
+                                    "gridLineColor": "rgba(42, 46, 57, 0.06)",
+                                    "container_id": "tradingview_450ff"
+                                }
+                            );
+                        </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                    <div class="pt-2">
+                        <h5 class="fw-bold me-3 mx-2 text-end">
+                            <a href="https://vn.tradingview.com" style="color: black">Tra cứu thị trường Việt Nam >></a>
+                        </h5>
                     </div>
                 </div>
                 <div class="card mt-2">
@@ -211,30 +268,4 @@
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-                datasets: [
-                    {
-                        label: "lượng giao dịch trong năm 2022",
-                        data: [65, 59, 80, 81, 56, 55, 40, 50, 60, 70, 68, 69],
-                        fill: true,
-                        borderColor: "rgb(75, 192, 192)",
-                        tension: 0.1,
-                    },
-                ],
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
 @stop
