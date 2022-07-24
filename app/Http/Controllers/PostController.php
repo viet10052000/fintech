@@ -32,6 +32,7 @@ class PostController extends Controller
         $post->title = $data['title'];
         $post->description = $data['description'];
         $post->url = $request->url;
+        $post->public = $request->public;
         $post->created_at = Carbon::now('Asia/Ho_Chi_Minh');
         $post->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $post->user_id = Auth::user()->id;
@@ -60,6 +61,7 @@ class PostController extends Controller
         $post->title = $data['title'];
         $post->description = $data['description'];
         $post->url = $request->url;
+        $post->public = $request->public;
         $post->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $post->user_id = Auth::user()->id;
         $path = $this->_upload($request);

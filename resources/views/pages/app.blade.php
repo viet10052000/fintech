@@ -62,8 +62,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('currency')}}">Tiền Tệ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('expert')}}">Chuyên Gia Phân Tích</a>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Chuyên Gia Phân Tích
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('expert')}}">
+                                    Danh sách bài đăng
+                                </a>
+                                <a class="dropdown-item" href="{{route('expert.list')}}">
+                                    Danh sách chuyên gia
+                                </a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('finance')}}">Tra Cứu</a>
@@ -213,5 +223,6 @@
         </footer>
         <!-- Footer -->
     </div>
+    @yield('js')
 </body>
 </html>

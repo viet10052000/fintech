@@ -42,6 +42,19 @@
                                 <input type="file" name="image" class="form-control-file">
                             </div>
 
+                            <div class="form-group">
+                                <label>Active</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" value="1" type="radio" name="active" id="active"
+                                        checked="">
+                                    <label class="form-check-label" for="active">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" value="0" type="radio" name="active" id="no_active">
+                                    <label class="form-check-label" for="no_active">No</label>
+                                </div>
+                            </div>
+
                             <a href="{{route('admin.pages.index')}}" class="btn btn-secondary">Quay lại</a>
                             <button type="submit" class="btn btn-primary">Thêm</button>
                         </form>

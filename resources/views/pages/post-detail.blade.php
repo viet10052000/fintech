@@ -37,9 +37,10 @@
                         </div>
                     </div>
 
+
                     <div class="fs-5 mx-3 mt-2">
                         <span>Chuyên gia phân tích : </span>{{ $post->user->name }}</span>
-                        <a class="fw-bold float-start mx-1" style="cursor: pointer;">
+                        <a class="fw-bold float-start mx-1" style="cursor: pointer;" href="{{route('expert.profile',$post->user_id)}}">
                             <i class="fa-solid fa-address-card"></i>
                         </a>
 
