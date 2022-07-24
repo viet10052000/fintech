@@ -30,12 +30,12 @@
                                         <td>{{$comment->updated_at}}</td>
                                         <td>
                                             <div class="p-1">
-                                                <form method="post" action="">
+                                                <form method="post" action="{{route('admin.comments.destroy',$comment->id)}}">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <a onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
+                                                    <button style="color: white;border: none;" type="submit" onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
                                                         <i class="fa-solid fa-trash-can" style="color: red;cursor: pointer"></i>
-                                                    </a>
+                                                    </button>
                                                 </form>
                                             </div>
                                         </td>

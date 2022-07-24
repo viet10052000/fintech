@@ -58,9 +58,9 @@
                                                     <form method="post" action="{{route('posts.destroy',$post->id)}}">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <a onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
+                                                        <button type="submit" style="border: none" onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
                                                             <i class="fa-solid fa-trash-can" style="color: red;cursor: pointer"></i>
-                                                        </a>
+                                                        </button>
                                                     </form>
                                                 </div>
                                             </div>

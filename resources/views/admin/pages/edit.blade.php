@@ -50,7 +50,7 @@
                                 <input type="text" value="{{$page->url}}" name="url" class="form-control" aria-describedby="emailHelp">
                             </div>
 
-                            <a href="{{route('posts.index')}}" class="btn btn-secondary">Quay lại</a>
+                            <a href="{{route('admin.pages.index')}}" class="btn btn-secondary">Quay lại</a>
                             <button type="submit" class="btn btn-primary">Edit</button>
                         </form>
                     </div>

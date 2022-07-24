@@ -61,7 +61,7 @@
                         </div>
                         <div class="content mt-3">
                             <p class="fs-5">
-                                {!! html_entity_decode($post->description) !!}
+                                {!! html_entity_decode($post->description, ENT_QUOTES, 'UTF-8') !!}
                             </p>
                         </div>
                     </div>

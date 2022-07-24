@@ -51,9 +51,9 @@
                                                     <form method="post" action="{{route('admin.pages.destroy',$page->id)}}">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <a onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
+                                                        <button style="color: white;border: none;" type="submit" onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
                                                             <i class="fa-solid fa-trash-can" style="color: red;cursor: pointer"></i>
-                                                        </a>
+                                                        </button>
                                                     </form>
                                                 </div>
                                             </div>

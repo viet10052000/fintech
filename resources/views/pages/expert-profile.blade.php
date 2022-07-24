@@ -91,6 +91,11 @@
                                     <div class="fw-bold fs-7">Chuyên Gia Phân Tích: {{ $post->user->name }}</div>
                                     <div class="p-1">Ngày đăng:{{ $post->created_at }} - lượt xem: {{ $post->view }}
                                     </div>
+                                    <div>
+                                        <p style="overflow: hidden;white-space: nowrap; text-overflow: ellipsis;">
+                                            {!! html_entity_decode($post->description, ENT_QUOTES, 'UTF-8') !!}
+                                        </p>
+                                    </div>
                                 </div>
                             </a>
                         @endforeach
