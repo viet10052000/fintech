@@ -43,4 +43,8 @@ Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::resource('/posts', App\Http\Controllers\admin\PostController::class);
     Route::resource('/comments', App\Http\Controllers\admin\CommentController::class);
     Route::resource('/stars', App\Http\Controllers\admin\StarController::class);
+    Route::get('/experts',[\App\Http\Controllers\Admin\ExpertController::class,'list'])->name('experts');
+    Route::get('/experts/{id}',[\App\Http\Controllers\Admin\ExpertController::class,'profile'])->name('expert.profile');
+    Route::post('/expert-subcribe', [\App\Http\Controllers\Admin\ExpertController::class,'expertSubcribe'])->name('expert.subcribe');
+    Route::post('/expert-unsubcribe', [\App\Http\Controllers\Admin\ExpertController::class,'expertUnSubcribe'])->name('expert.unsubcribe');
 });

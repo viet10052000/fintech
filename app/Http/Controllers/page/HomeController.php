@@ -96,18 +96,25 @@ class HomeController extends Controller
     public function expertProfile($id) {
         $user = User::find($id);
         $isSubcribe = 0;
+        $isAccepted = 0;
         $subcribe = DB::table('subcribes')
         ->where('expert_id','=',$id)->where('user_id','=',Auth::user()->id)->first();
         $subcribeNum = DB::table('subcribes')
         ->where('expert_id','=',$id)->count();
+        $isAccepted = $subcribe->is_accepted;
         if($subcribe){
             $isSubcribe = 1;
-            $posts = Post::where('user_id','=',$id)->orderBy('id', 'DESC')->paginate(8);
+            if($isAccepted == 1)
+                {
+                    $posts = Post::where('user_id','=',$id)->orderBy('id', 'DESC')->paginate(8);
+                }else {
+                    $posts = Post::where('user_id','=',$id)->where('public','=','1')->orderBy('id', 'DESC')->paginate(8);
+                } 
         } else {
             $posts = Post::where('user_id','=',$id)->where('public','=','1')->orderBy('id', 'DESC')->paginate(8);
         }
         
-        return view('pages.expert-profile',compact(['posts','user','isSubcribe','subcribeNum']));
+        return view('pages.expert-profile',compact(['posts','user','isSubcribe','subcribeNum','isAccepted']));
     }
 
     public function expertSubcribe(Request $request){
@@ -117,6 +124,7 @@ class HomeController extends Controller
             $subcribe = new Subcribe();
             $subcribe->user_id =  $user->id;
             $subcribe->expert_id =  $expert->id;
+            $subcribe->is_accepted = 0;
             $subcribe->save();
             // DB::insert('insert into subcribes (user_id,expert_id) values (?,?)',[$user->id,$expert->id]);
             return redirect(route('expert.profile',$expert->id))
