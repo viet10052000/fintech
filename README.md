@@ -1,6 +1,6 @@
 ### Installation ###
 
-* `git clone https://github.com/ducnt1003/web_shopping.git`
+* `git clone https://github.com/viet10052000/fintech.git`
 * `cd projectname`
 * `composer install`
 * `php artisan key:generate`
