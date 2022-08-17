@@ -30,7 +30,7 @@
                         </div>
                         <div class="content mt-3">
                             <p class="fs-5">
-                                {{ $page->description }}
+                                {!! html_entity_decode($page->description, ENT_QUOTES, 'UTF-8') !!}
                             </p>
                         </div>
                         @if($page->url)

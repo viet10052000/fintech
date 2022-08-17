@@ -45,12 +45,12 @@
                                         <td>{{$post->updated_at}}</td>
                                         <td>
                                             <div class="p-1">
-                                                <form method="post" action="{{route('posts.destroy',$post->id)}}">
+                                                <form method="post" action="{{route('admin.posts.destroy',$post->id)}}">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <a onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
+                                                    <button style="color: white;border: none;" type="submit" onclick="return confirm('bạn muốn xóa?');" class="cursor-pointer">
                                                         <i class="fa-solid fa-trash-can" style="color: red;cursor: pointer"></i>
-                                                    </a>
+                                                    </button>
                                                 </form>
                                             </div>
                                         </td>

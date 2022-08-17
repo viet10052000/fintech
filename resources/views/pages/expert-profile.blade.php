@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header text-center">
                         <h2>Profile Chuyên gia</h2>
@@ -43,13 +43,13 @@
                                         value="{{ $subcribeNum }}" readonly>
                                 </div>
                             </div>
-                            
 
-                            <div class="row justify-content-end"> 
+
+                            <div class="row justify-content-end">
                                 <div class="col-md-2 float-end">
                                 @if($isSubcribe == 0)
                                 <button class="fw-bold float-end btn btn-outline-success btn-sm mx-1 subcribe" data="{{$user->id}}">Đăng ký</button>
-                                
+
                                 @else
                                 
                                 <button class="fw-bold float-end btn btn-outline-danger btn-sm mx-1 unsubcribe" data="{{$user->id}}" >Hủy đăng ký</button>
@@ -80,7 +80,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h2>Danh sách bài đăng</h2>
-                        
+
                     </div>
 
                     <div class="card-body">
@@ -88,7 +88,7 @@
                             <a class="row mt-1 text-decoration-none" style="color:black;"
                                 href="{{ route('expert.detail', $post->id) }}">
                                 <div class="col-2">
-                                    <img height="75" width="75" src="{{ $post->image }}" alt="{{ $post->name }}">
+                                    <img style="width: 100%;height: 100px" src="{{ $post->image }}" alt="{{ $post->name }}">
                                 </div>
                                 <div class="col-10">
                                     <div class="fw-bold fs-7">{{ $post->title }}</div>
@@ -97,7 +97,7 @@
                                     </div>
                                     <div>
                                         <p style="overflow: hidden;white-space: nowrap; text-overflow: ellipsis;">
-                                            {{ $post->description }}
+                                            {!! html_entity_decode($post->description, ENT_QUOTES, 'UTF-8') !!}
                                         </p>
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
                         Bạn có chắc muốn đăng ký không?
                     </div>
                     <div class="modal-footer">
-                        
+
                         <button type="submit" class="btn btn-success">Có</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
                     </div>
@@ -147,7 +147,7 @@
                         Bạn có chắc muốn hủy đăng ký không?
                     </div>
                     <div class="modal-footer">
-                        
+
                         <button type="submit" class="btn btn-danger">Hủy đăng ký</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
                     </div>

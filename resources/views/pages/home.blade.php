@@ -85,7 +85,7 @@
                                     <div class="p-1">Ngày đăng:{{$page->created_at}} - lượt xem: {{$page->view}}</div>
                                     <div>
                                         <p style="overflow: hidden;white-space: nowrap; text-overflow: ellipsis;">
-                                            {{$page->description}}
+                                            {!! html_entity_decode($page->description, ENT_QUOTES, 'UTF-8') !!}
                                         </p>
                                     </div>
                                 </div>
