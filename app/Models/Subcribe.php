@@ -11,6 +11,7 @@ class Subcribe extends Model
 
     protected $fillable = [
         'user_id',
-        'expert_id'
+        'expert_id',
+        'is_accepted'
     ];
 }
